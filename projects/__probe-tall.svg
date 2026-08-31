@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="3600" viewBox="0 0 1200 3600">
+  <rect width="1200" height="3600" fill="#0d111e"/>
+  <g font-family="monospace" font-size="140" fill="#64ffda" text-anchor="middle">
+    <rect y="0" width="1200" height="600" fill="#11182b"/><text x="600" y="330">TOP 01</text>
+    <rect y="600" width="1200" height="600" fill="#161d33"/><text x="600" y="930">02</text>
+    <rect y="1200" width="1200" height="600" fill="#11182b"/><text x="600" y="1530">03</text>
+    <rect y="1800" width="1200" height="600" fill="#161d33"/><text x="600" y="2130">04</text>
+    <rect y="2400" width="1200" height="600" fill="#11182b"/><text x="600" y="2730">05</text>
+    <rect y="3000" width="1200" height="600" fill="#1d2440"/><text x="600" y="3330">END 06</text>
+  </g>
+</svg>
