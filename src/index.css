@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Reset + base */
+  *, *::before, *::after { box-sizing: border-box; }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    /* Account for the fixed navbar height when jumping to anchors */
+    scroll-padding-top: 6rem;
+  }
+  body {
+    @apply bg-bg-primary text-ink-primary font-sans antialiased;
+    background-image:
+      radial-gradient(circle at 18% 8%, rgba(100,255,218,0.06), transparent 45%),
+      radial-gradient(circle at 82% 32%, rgba(167,139,250,0.05), transparent 50%),
+      radial-gradient(circle at 50% 90%, rgba(100,255,218,0.04), transparent 55%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+  }
+  ::selection {
+    @apply bg-accent-cyan/25 text-white;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { @apply bg-bg-secondary; }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(100,255,218,0.55), rgba(167,139,250,0.55));
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(100,255,218,0.85), rgba(167,139,250,0.85));
+  }
+
+  /* Focus ring — accessible, cyan, not Tailwind's default blue */
+  :focus { outline: none; }
+  :focus-visible {
+    outline: 2px solid theme('colors.accent.cyan');
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-surface border border-white/[0.08] backdrop-blur-xl;
+  }
+  .glass-strong {
+    @apply bg-surface-strong border border-white/[0.12] backdrop-blur-2xl;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-cyan to-accent-violet;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-[0.7rem] tracking-eyebrow uppercase text-accent-cyan;
+  }
+  .num-tag {
+    @apply font-mono text-[0.7rem] tracking-eyebrow text-ink-muted;
+  }
+  .btn-primary {
+    @apply relative inline-flex items-center gap-2 px-5 py-2.5 rounded-md
+           bg-accent-cyan text-bg-primary font-medium text-sm
+           transition-all duration-200 hover:shadow-glow-cyan hover:-translate-y-px active:translate-y-0;
+  }
+  .btn-ghost {
+    @apply relative inline-flex items-center gap-2 px-5 py-2.5 rounded-md
+           border border-white/15 text-ink-primary
+           transition-all duration-200 hover:border-accent-cyan/60 hover:text-accent-cyan hover:-translate-y-px;
+  }
+  .container {
+    @apply relative max-w-container mx-auto px-5 sm:px-6 md:px-10;
+  }
+  .section {
+    @apply relative py-20 sm:py-24 md:py-32;
+  }
+  .chip {
+    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-[0.7rem] font-mono
+           bg-white/[0.04] border border-white/10 text-ink-muted;
+  }
+}
+
+@layer utilities {
+  /* Single subtle divider for the numbered section gutter */
+  .rule {
+    @apply h-px w-full bg-white/10;
+  }
+  /* Clamp a multiline description to N lines */
+  .clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Custom cursor disabled in this case, native restored */
+  .cursor-custom { display: none !important; }
+}

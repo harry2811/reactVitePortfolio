@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} | size %{size_download} bytes | time %{time_total}s\\\\n\" http://127.0.0.1:5173/)",
+      "WebFetch(domain:brittanychiang.com)",
+      "WebFetch(domain:leerob.io)",
+      "WebFetch(domain:raunofreiberg.com)",
+      "WebFetch(domain:cobe.vercel.app)",
+      "Bash(curl *)",
+      "WebFetch(domain:leerob.com)",
+      "Bash(npm install *)",
+      "Bash(npx vite *)"
+    ]
+  }
+}
