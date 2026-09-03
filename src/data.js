@@ -35,6 +35,8 @@ export const services = [
   { title: 'Landing Pages',      desc: 'High-converting landing pages with tight typography, bold visuals, and A/B-ready sections.',   icon: 'Sparkles' },
 ]
 
+const projectImage = (filename) => `${import.meta.env.BASE_URL}projects/${filename}`
+
 export const projects = [
   {
     name: 'Yardsale',
@@ -43,7 +45,7 @@ export const projects = [
     metric: '+38% AOV',
     featured: true,
     accent: 'cyan',
-    image: '/projects/yardsale.jpg',
+    image: projectImage('yardsale.jpg'),
   },
   {
     name: 'Barry Red Studio',
@@ -51,7 +53,7 @@ export const projects = [
     tags: ['Editorial', 'Theme Dev'],
     metric: '2.4× LCP',
     accent: 'violet',
-    image: '/projects/barryred.jpg',
+    image: projectImage('barryred.jpg'),
   },
   {
     name: 'KUVRD Core',
@@ -59,7 +61,7 @@ export const projects = [
     tags: ['Liquid', 'Configurator'],
     metric: '+19% conversion',
     accent: 'cyan',
-    image: '/projects/kuvrd.jpg',
+    image: projectImage('kuvrd.jpg'),
   },
   {
     name: 'GardPro GearHub',
@@ -67,7 +69,7 @@ export const projects = [
     tags: ['Performance', 'PDP'],
     metric: '0.8s LCP',
     accent: 'violet',
-    image: '/projects/yardsale.jpg',
+    image: projectImage('yardsale.jpg'),
   },
   {
     name: 'Orata Crafted',
@@ -75,7 +77,7 @@ export const projects = [
     tags: ['Branding', 'CMS'],
     metric: '+52% sessions',
     accent: 'cyan',
-    image: '/projects/kuvrd.jpg',
+    image: projectImage('kuvrd.jpg'),
   },
   {
     name: 'Living Essentials',
@@ -83,7 +85,7 @@ export const projects = [
     tags: ['CRO', 'A/B'],
     metric: '-22% bounce',
     accent: 'violet',
-    image: '/projects/LIVING-SILICA.jpg',
+    image: projectImage('LIVING-SILICA.jpg'),
   },
 ]
 
