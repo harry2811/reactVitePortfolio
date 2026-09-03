@@ -151,7 +151,7 @@ function ProjectModal({ project, onClose }) {
             dynamic metafields, and a fully responsive product experience.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a href="#" className="btn-primary !py-2 !px-4 !text-xs">
+            <a href={project.url || '#'} target={project.url ? '_blank' : undefined} rel={project.url ? 'noreferrer' : undefined} className="btn-primary !py-2 !px-4 !text-xs">
               <ExternalLink size={13} /> Live preview
             </a>
           </div>
