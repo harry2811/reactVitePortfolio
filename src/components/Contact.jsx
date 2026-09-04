@@ -12,30 +12,8 @@ export default function Contact() {
 
   const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }))
 
-  const onSubmit = (e) => {
-    e.preventDefault()
-    setError('')
-    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
-      setError('Please fill in all fields.')
-      setStatus('error')
-      return
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-      setError('Please enter a valid email address.')
-      setStatus('error')
-      return
-    }
-    setStatus('sending')
-    // Simulated send — wire to Formspree/Resend in production
-    setTimeout(() => {
-      setStatus('sent')
-      setForm(initial)
-      setTimeout(() => setStatus('idle'), 4000)
-    }, 1000)
-  }
-
   const contactInfo = [
-    { Icon: Mail,    color: 'text-accent-cyan',    text: 'hello@hassan.dev' },
+    { Icon: Mail,    color: 'text-accent-cyan',    text: 'hassanrazzaq0786@gmail.com' },
     { Icon: MapPin,  color: 'text-accent-violet',  text: 'Remote · Worldwide' },
     { Icon: Sparkles,color: 'text-accent-cyan',    text: 'Replies within 24h' },
     { Icon: Clock,   color: 'text-accent-violet',  text: 'Mon – Fri · 9am–6pm PKT' },
@@ -77,7 +55,8 @@ export default function Contact() {
           </motion.div>
 
           <motion.form
-            onSubmit={onSubmit}
+            action="https://formspree.io/f/mrbkglwq"
+            method="POST"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -95,6 +74,7 @@ export default function Contact() {
                   </label>
                   <input
                     id={key}
+                    name={key}
                     value={form[key]}
                     onChange={update(key)}
                     onFocus={() => setFocused(key)}
@@ -114,6 +94,7 @@ export default function Contact() {
               </label>
               <textarea
                 id="message"
+                name="message"
                 value={form.message}
                 onChange={update('message')}
                 onFocus={() => setFocused('message')}

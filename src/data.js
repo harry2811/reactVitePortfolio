@@ -46,22 +46,7 @@ export const projects = [
     featured: true,
     accent: 'cyan',
     image: projectImage('yardsale.jpg'),
-  },
-  {
-    name: 'Barry Red Studio',
-    desc: 'Editorial storefront for a creative studio — bold type, immersive imagery, custom sections.',
-    tags: ['Editorial', 'Theme Dev'],
-    metric: '2.4× LCP',
-    accent: 'violet',
-    image: projectImage('barryred.jpg'),
-  },
-  {
-    name: 'KUVRD Core',
-    desc: 'Product configurator with rich media, 3D-ready embeds, and dynamic variant storytelling.',
-    tags: ['Liquid', 'Configurator'],
-    metric: '+19% conversion',
-    accent: 'cyan',
-    image: projectImage('kuvrd.jpg'),
+    url: 'https://yardsale.day/',
   },
   {
     name: 'Tiare Hawaii',
@@ -78,6 +63,23 @@ export const projects = [
     metric: 'Live store',
     accent: 'cyan',
     url: 'https://luxe-cosmetics.com/',
+  },
+  {
+    name: 'KUVRD Core',
+    desc: 'Product configurator with rich media, 3D-ready embeds, and dynamic variant storytelling.',
+    tags: ['Liquid', 'Configurator'],
+    metric: '+19% conversion',
+    accent: 'cyan',
+    image: projectImage('kuvrd.jpg'),
+    url: 'https://kuvrd.ca/',
+  },
+  {
+    name: 'Barry Red Studio',
+    desc: 'Editorial storefront for a creative studio — bold type, immersive imagery, custom sections.',
+    tags: ['Editorial', 'Theme Dev'],
+    metric: '2.4× LCP',
+    accent: 'violet',
+    image: projectImage('barryred.jpg'),
   },
   {
     name: 'Living Essentials',
@@ -105,6 +107,6 @@ export const stats = [
 export const socials = [
   { name: 'GitHub',   url: 'https://github.com',   icon: 'Github' },
   { name: 'LinkedIn', url: 'https://linkedin.com', icon: 'Linkedin' },
-  { name: 'Email',    url: 'mailto:hello@example.com', icon: 'Mail' },
+  { name: 'Email',    url: 'mailto:hassanrazzaq0786@gmail.com', icon: 'Mail' },
   { name: 'Resume',   url: '#',                   icon: 'FileText' },
 ]
