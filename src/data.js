@@ -54,6 +54,7 @@ export const projects = [
     tags: ['Fashion', 'Shopify'],
     metric: 'Live store',
     accent: 'violet',
+    image: projectImage('tiare-hawaii.jpg'),
     url: 'https://tiarehawaii.com/',
   },
   {
@@ -62,6 +63,7 @@ export const projects = [
     tags: ['Cosmetics', 'Shopify'],
     metric: 'Live store',
     accent: 'cyan',
+    image: projectImage('luxe-cosmetics.jpg'),
     url: 'https://luxe-cosmetics.com/',
   },
   {
