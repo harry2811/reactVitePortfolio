@@ -143,13 +143,26 @@ function FaceLabels({ face, onSelect }) {
 }
 
 export default function Crate3D() {
+  const containerRef = useRef(null)
   const [face, setFace] = useState(0)
   const [reducedMotion, setReducedMotion] = useState(false)
+  const [inView, setInView] = useState(true)
   const [expanded, setExpanded] = useState(null)
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
     setReducedMotion(mq.matches)
+  }, [])
+
+  useEffect(() => {
+    const node = containerRef.current
+    if (!node || !('IntersectionObserver' in window)) return
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { rootMargin: '150px 0px' },
+    )
+    observer.observe(node)
+    return () => observer.disconnect()
   }, [])
 
   if (reducedMotion) {
@@ -166,10 +179,11 @@ export default function Crate3D() {
   }
 
   return (
-    <div className="relative w-full h-full">
+    <div ref={containerRef} className="relative w-full h-full">
       <Canvas
         shadows
-        dpr={[1, 2]}
+        frameloop={inView ? 'always' : 'demand'}
+        dpr={[1, 1.5]}
         camera={{ position: [0, 0.4, 5.2], fov: 38 }}
         gl={{ antialias: true, alpha: true }}
       >
@@ -179,8 +193,8 @@ export default function Crate3D() {
             position={[4, 6, 4]}
             intensity={1.1}
             castShadow
-            shadow-mapSize-width={1024}
-            shadow-mapSize-height={1024}
+            shadow-mapSize-width={512}
+            shadow-mapSize-height={512}
           />
           <directionalLight position={[-3, 2, -2]} intensity={0.4} color="#a78bfa" />
           <Crate onFaceChange={setFace} />

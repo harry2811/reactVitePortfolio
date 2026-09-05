@@ -59,10 +59,10 @@ export default function About() {
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">
-              <a href="#" className="btn-primary">
+              <a href={`${import.meta.env.BASE_URL}Hassan-Resume.pdf`} target="_blank" rel="noreferrer" className="btn-primary">
                 <Download size={14} /> Resume
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="btn-ghost">
+              <a href="https://www.linkedin.com/in/muhammad-hassan-42645b24a/" target="_blank" rel="noreferrer" className="btn-ghost">
                 <Linkedin size={14} /> LinkedIn
               </a>
             </div>

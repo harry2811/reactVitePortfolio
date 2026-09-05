@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react'
 
 // Travel speed for the hover scroll. Slow enough to actually read the page.
-const SPEED_PX_S = 190
-const MIN_MS = 1100
-const MAX_MS = 5200
-const RETURN_MS = 620
+const SPEED_PX_S = 100
+const MIN_MS = 1600
+const MAX_MS = 16000
+const RETURN_MS = 800
 // Below this there is nothing worth travelling — don't promise a viewer.
 const MIN_TRAVEL_PX = 48
 
@@ -88,7 +88,7 @@ export default function ProjectShot({ src, name, aspect, accent, hovered }) {
           decoding="async"
           onLoad={measure}
           onError={(e) => { e.currentTarget.style.display = 'none' }}
-          className={`absolute left-0 top-0 ${fit} will-change-transform`}
+          className={`absolute left-0 top-0 ${fit} ${hovered ? 'will-change-transform' : ''}`}
           style={{
             opacity: loaded ? 1 : 0,
             transform,

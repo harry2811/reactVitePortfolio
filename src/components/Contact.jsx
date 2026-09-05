@@ -16,7 +16,6 @@ export default function Contact() {
     { Icon: Mail,    color: 'text-accent-cyan',    text: 'hassanrazzaq0786@gmail.com' },
     { Icon: MapPin,  color: 'text-accent-violet',  text: 'Remote · Worldwide' },
     { Icon: Sparkles,color: 'text-accent-cyan',    text: 'Replies within 24h' },
-    { Icon: Clock,   color: 'text-accent-violet',  text: 'Mon – Fri · 9am–6pm PKT' },
   ]
 
   return (

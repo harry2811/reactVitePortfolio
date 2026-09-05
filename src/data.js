@@ -36,6 +36,7 @@ export const services = [
 ]
 
 const projectImage = (filename) => `${import.meta.env.BASE_URL}projects/${filename}`
+const projectThumb = (filename) => projectImage(`thumbs/${filename}`)
 
 export const projects = [
   {
@@ -46,6 +47,7 @@ export const projects = [
     featured: true,
     accent: 'cyan',
     image: projectImage('yardsale.jpg'),
+    thumb: projectThumb('yardsale.jpg'),
     url: 'https://yardsale.day/',
   },
   {
@@ -55,6 +57,7 @@ export const projects = [
     metric: 'Live store',
     accent: 'violet',
     image: projectImage('tiare-hawaii.jpg'),
+    thumb: projectThumb('tiare-hawaii.jpg'),
     url: 'https://tiarehawaii.com/',
   },
   {
@@ -64,6 +67,7 @@ export const projects = [
     metric: 'Live store',
     accent: 'cyan',
     image: projectImage('luxe-cosmetics.jpg'),
+    thumb: projectThumb('luxe-cosmetics.jpg'),
     url: 'https://luxe-cosmetics.com/',
   },
   {
@@ -73,6 +77,7 @@ export const projects = [
     metric: '+19% conversion',
     accent: 'cyan',
     image: projectImage('kuvrd.jpg'),
+    thumb: projectThumb('kuvrd.jpg'),
     url: 'https://kuvrd.ca/',
   },
   {
@@ -82,6 +87,7 @@ export const projects = [
     metric: '2.4× LCP',
     accent: 'violet',
     image: projectImage('barryred.jpg'),
+    thumb: projectThumb('barryred.jpg'),
   },
   {
     name: 'Living Essentials',
@@ -90,6 +96,7 @@ export const projects = [
     metric: '-22% bounce',
     accent: 'violet',
     image: projectImage('LIVING-SILICA.jpg'),
+    thumb: projectThumb('LIVING-SILICA.jpg'),
   },
 ]
 
@@ -107,8 +114,9 @@ export const stats = [
 ]
 
 export const socials = [
-  { name: 'GitHub',   url: 'https://github.com',   icon: 'Github' },
-  { name: 'LinkedIn', url: 'https://linkedin.com', icon: 'Linkedin' },
+  { name: 'GitHub',           url: 'https://github.com/harry2811', icon: 'Github' },
+  { name: 'LinkedIn',         url: 'https://www.linkedin.com/in/muhammad-hassan-42645b24a/', icon: 'Linkedin' },
   { name: 'Email',    url: 'mailto:hassanrazzaq0786@gmail.com', icon: 'Mail' },
-  { name: 'Resume',   url: '#',                   icon: 'FileText' },
+  { name: 'Resume',   url: `${import.meta.env.BASE_URL}Hassan-Resume.pdf`, icon: 'FileText' },
+  { name: 'Portfolio Source', url: 'https://github.com/harry2811/reactVitePortfolio', icon: 'Code2' },
 ]

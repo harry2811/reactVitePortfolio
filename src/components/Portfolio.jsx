@@ -31,7 +31,7 @@ function ProjectCard({ p, onOpen, i, featured }) {
       {/* Visual: the shot travels through the frame on hover */}
       <div className="relative aspect-[16/9] overflow-hidden bg-bg-secondary">
         <ProjectShot
-          src={p.image}
+          src={p.thumb || p.image}
           name={p.name}
           accent={p.accent}
           aspect={featured ? 21 / 9 : 16 / 9}

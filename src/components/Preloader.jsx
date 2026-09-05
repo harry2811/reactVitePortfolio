@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { projects } from '../data'
 
 const MIN_MS  = 1500  // the count always takes at least this long to run
 const MAX_MS  = 6000  // failsafe — one stalled asset never holds the site hostage
@@ -32,19 +31,11 @@ export default function Preloader({ onDone }) {
   }, [])
 
   useEffect(() => {
-    // Honest progress: fonts, window load, and every project screenshot.
-    // Preloading the shots here also makes the card hover-scroll instant.
-    const shots = projects.map((p) => p.image).filter(Boolean)
-    const total = shots.length + 2
+    // Keep startup light. Project thumbnails load lazily near the work section;
+    // downloading full-page screenshots here caused a large decode spike on scroll.
+    const total = 2
     let done = 0
     const bump = () => { done += 1 }
-
-    shots.forEach((src) => {
-      const img = new Image()
-      img.onload = bump
-      img.onerror = bump
-      img.src = src
-    })
 
     if (document.fonts) document.fonts.ready.then(bump, bump)
     else bump()
